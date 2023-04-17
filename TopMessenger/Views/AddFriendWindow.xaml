@@ -4,14 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TopMessenger.Views"
+        xmlns:vm="clr-namespace:TopMessenger.ViewModels"
         mc:Ignorable="d"
         Title="AddFriendWindow" Height="600" Width="800"
         AllowsTransparency="False"
-        WindowStyle="None"
-        xmlns:vm="clr-namespace:TopMessenger.ViewModels"
+        WindowStyle="None"       
         >
     <Window.DataContext>
-        <vm:AddFriendViewMidel></vm:AddFriendViewMidel>
+        <vm:MainViewModel x:Name="AddFriendViewModel"></vm:MainViewModel>
     </Window.DataContext>
     <DockPanel>
         <Border DockPanel.Dock="Top" Style="{StaticResource BorderTopWindow}">
@@ -41,12 +41,16 @@
         <StackPanel>
             <Button Margin="50" Style="{StaticResource AddFriendBtn}">                
             </Button>
-            <ListView Width="360" Height="400"                      
+            <ListView Width="360" Height="200"                      
                       ItemContainerStyle="{StaticResource UsersListViewItem}"
                       ItemsSource="{Binding AllUsers}"
                       >
                 
             </ListView>
+            <Button Width="250" Height="200"
+                    Style="{StaticResource GradientBtn}"
+                    >                
+            </Button>
                 
         </StackPanel>
             
