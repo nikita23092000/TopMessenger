@@ -55,8 +55,20 @@
                 </Label.Style>
             </Label>
             
-            <TextBox Margin="15" ></TextBox>
-            <Label Margin="10" ></Label>
+            <TextBox Margin="15" Text="{Binding Email}"></TextBox>
+            <Label Margin="10" Content="Email не верный">
+                <Label.Style>
+                    <Style TargetType="Label">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsEmailValid}" Value="False">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+
+                </Label.Style>
+            </Label>
             
             <TextBox Margin="15" ></TextBox>
             <Label Margin="10"></Label>
